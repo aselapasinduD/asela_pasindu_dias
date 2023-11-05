@@ -1,0 +1,19 @@
+.NavigationBar {
+    backdrop-filter: blur(1px);
+}
+.NavigationBar ul:first-child li:first-child {
+    border-radius: 9999px 0px 0px 9999px;
+}
+.NavigationBar ul:last-of-type li:last-child {
+    border-radius: 0px 9999px 9999px 0px;
+}
+.Social-Icons li svg {
+    width: 30px;
+}
+.Social-Icons li {
+    padding: 0 15px;
+}
+.Sections-Nav li {
+    font-size: 1.5rem;
+    font-weight: 600;
+}

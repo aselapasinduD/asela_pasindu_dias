@@ -1,0 +1,29 @@
+.projectBox {
+    perspective: 1200px;
+}
+.projectBox .imageAni{
+    transition: scale 1s, transform 1.5s;
+}
+.projectBox .backgroundAni {
+    transition: transform 1.5s;
+}
+.projectBox .projectDetailsAni {
+    transition: transform 1.5s;
+}
+.projectBox .projectName {
+    transition: transform 1.5s;
+}
+
+.projectBox:hover .imageAni {
+    scale:80%;
+    transform: rotateY(30deg) skewX(10deg) translateX(-42%);
+}
+.projectBox:hover .backgroundAni {
+    transform: rotateY(-380deg) skewX(-20deg) translateX(10%);
+}
+.projectBox:hover .projectDetailsAni {
+    transform: rotateY(-20deg) skewX(-20deg) translate(55%, 40%);
+}
+.projectBox:hover .projectName {
+    transform: rotateY(-20deg) skewX(-20deg) translate(62%, 9%);
+}

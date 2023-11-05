@@ -1,0 +1,19 @@
+.skillBoxs .skillPercentage {
+    fill: none;
+}
+.skillBoxs .skillPercentage rect {
+    stroke: #FF6600;
+    stroke-linecap: round;
+}
+.skillBoxs .skillPercentageOuter {
+    box-shadow: 
+        4px 5px 6px -2px #0000006f,
+        -4px -5px 6px -2px #ffffff6f
+}
+.skillBoxs .skillPercentageInner {
+    box-shadow: 
+    inset 4px 3px 10px 0px #0000007a,
+    0.5px 0.5px 3px 0px #0000006f,
+    inset -3px -4px 5px -1px #ffffff8f,
+    -0.5px -0.5px 2px 0px #ffffff9f
+}

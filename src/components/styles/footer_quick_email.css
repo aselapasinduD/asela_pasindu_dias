@@ -1,0 +1,15 @@
+.Footer .quickEmailSubmitButton {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    box-shadow: 
+        1px 2px 8px 1px gray,
+        inset 3px 2px 10px -2px #0000009F;
+    transition: scale .3s, box-shadow .3s;
+}
+.Footer .quickEmailSubmitButton:active {
+    scale: 98%;
+    box-shadow: 
+        1px 2px 8px 0px gray,
+        inset 3px 2px 10px -3px #0000009F;
+}

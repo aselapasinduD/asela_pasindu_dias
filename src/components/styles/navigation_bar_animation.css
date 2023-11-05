@@ -1,0 +1,25 @@
+.bobl {
+    box-shadow: inset -2px 2px 4px 0px white, inset 3px -2px 4px 0px rgb(95, 95, 95), 0px 3px 4px 0px gray;
+    opacity: 0.7;
+    backdrop-filter: blur(1px);
+}
+.nav_animation {
+    transition: transform 0.8s, width 0.7s;
+    transition-timing-function: ease-out;
+}
+.NavigationBar a:active {
+    background-color: #333;
+    color: transparent;
+    text-shadow: 0px -1px 1px #ff6600f0, 0px 0px 0px #000000, 0px 1px 2px gray;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    scale: 90%;
+}
+.bobl:active {
+    scale: 80%;
+}
+.Social-Icons svg path {
+    fill: #FF6600;
+    box-shadow: 1px 1px 1px 1px gray;
+}
