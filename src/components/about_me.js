@@ -10,7 +10,7 @@ const AboutMe = () => {
             <h1>Who Am I</h1>
             <div className=" aboutMeDetails flex mb-10 ">
                 <img className=" flex-1 max-w-[712px] m-[40px]" alt="Working" src={MyPhoto2} />
-                <span className=" horizontalLine bg-[#FF6600] w-1 h-100% mx-2 rounded-full " ></span>
+                <span className=" horizontalLine bg-[#FF6600] w-[2px] h-100% mx-2 rounded-full " ></span>
                 <div className="paragraphs flex-1 mt-4 ">
                     <p className=" paragraph-1 mb-5 ">
                         Hello. I'm Asela Pasindu Dias. I'm a multi-talented person who has over 4+ years of experience in a variety of design disciplines, coding, and research fields.

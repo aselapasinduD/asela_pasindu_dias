@@ -8,7 +8,7 @@
 .skillBoxs .skillPercentageOuter {
     box-shadow: 
         4px 5px 6px -2px #0000006f,
-        -4px -5px 6px -2px #ffffff6f
+        -4px -4px 2px -3px #ffffff
 }
 .skillBoxs .skillPercentageInner {
     box-shadow: 

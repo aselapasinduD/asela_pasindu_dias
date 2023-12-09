@@ -6,7 +6,7 @@ import './styles/footer_quick_email.css'
 const Footer = () => {
     console.log("Render Footer Section");
     return (
-        <div id="footer" data-testid="footer" className=" sections Footer ">
+        <footer id="footer" data-testid="footer" className=" sections Footer ">
             <hr className=" border-[#FF6600] my-2 " />
             <div className=" flex flex-1 my-5 text-left text-[18px] ">
                 <ul className=" flex-1 ">
@@ -43,10 +43,12 @@ const Footer = () => {
                         name="message"
                         className=" w-[320px] h-[200px] border-2 border-[#FF6600] rounded-[20px] p-[10px] "
                         placeholder="Quick Email" required></textarea>
-                    <input 
+                    <button 
                         type="submit"
                         value="Submit"
-                        className=" quickEmailSubmitButton w-max border-2 border-[#FF6600] bg-[#FF6600] rounded-[20px] p-1 px-10 font-semibold hover:cursor-pointer " />
+                        className=" quickEmailSubmitButton text-black w-max border-2 border-[#FF6600] bg-[#FF6600] rounded-[20px] p-1 px-10 font-semibold ">
+                            Submit
+                    </button>
                 </form>
             </div>
             <hr className=" border-[#FF6600] my-2 " />
@@ -54,7 +56,7 @@ const Footer = () => {
                 <p className=" flex-1 text-left ">copyright©AselaPasinduDias</p>
                 <p>0.2v - 2023/11/03</p>
             </div>
-        </div>
+        </footer>
     );
 }
 

@@ -1,7 +1,23 @@
 *{
-  outline: 1px dashed red;
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
+  color: white;
 }
+body {
+  background-color: black;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.sections {
+  padding: 0 120px;
+}

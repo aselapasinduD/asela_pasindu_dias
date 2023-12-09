@@ -18,12 +18,35 @@
     scale:80%;
     transform: rotateY(30deg) skewX(10deg) translateX(-42%);
 }
+
 .projectBox:hover .backgroundAni {
     transform: rotateY(-380deg) skewX(-20deg) translateX(10%);
 }
-.projectBox:hover .projectDetailsAni {
-    transform: rotateY(-20deg) skewX(-20deg) translate(55%, 40%);
+.projectBox .backgroundAni:active {
+    transform: rotateY(-360deg) skewX(0deg) translateX(0%);
+    z-index: 5;
 }
+.projectBox .backgroundAni:active ~ .projectBox .imageAni {
+    transform: rotateY(90deg) skewX(-20deg) translateX(10%);
+}
+
+.projectBox:hover .projectDetailsAni {
+    transform: rotateY(-20deg) skewX(-20deg) translate(0px, 40px);
+}
+
 .projectBox:hover .projectName {
     transform: rotateY(-20deg) skewX(-20deg) translate(62%, 9%);
+}
+
+.projectBox.hover .projectDetailSlide {
+    animation: textSlide 1.5s linear;
+}
+
+@keyframes textSlide {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(20%);
+    }
 }

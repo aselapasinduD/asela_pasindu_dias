@@ -75,7 +75,7 @@ const NavigationBar = ({className}) => {
     const [bobl, makeBobl] = useState(null);
     useEffect(() => {
         makeBobl(<span 
-            className="bobl nav_animation absolute bg-[#9C9C9C] h-[50px] ml-[6px] z-[-1] rounded-full" 
+            className="bobl nav_animation absolute bg-[#4F4F4F]/60 h-[50px] ml-[6px] z-[-1] rounded-full" 
             style={{
                 width: (elementWidth !== 0 ? elementWidth - 12: currentWidth - 12) + 'px',
                 transform: 'translateX(' + moveBobl + 'px)'
@@ -84,11 +84,15 @@ const NavigationBar = ({className}) => {
 
 
     return (
-        <div data-testid=" navigationBar " className={` NavigationBar relative flex rounded-full items-center z-[3] bg-[#D9D9D99c] ${className} `} >
+        <nav data-testid=" navigationBar " className={` NavigationBar relative flex rounded-full items-center z-[3] bg-[#FFFFFF]/80 ${className} `} >
 
             <ul className=" Sections-Nav flex contents ">
                 {sectionList.map((section, index) => {
-                    return <li key={index} id={`navItem-${index}`} className=" flex-1 w-max h-[60px] inline-grid items-center" ref={navItemRef} onMouseEnter={handleMouseEnter}><a className="contents" href={section[1]}>{section[0]}</a></li>;
+                    return (
+                        <li key={index} id={`navItem-${index}`} className=" flex-1 w-max h-[60px] inline-grid items-center text-black" ref={navItemRef} onMouseEnter={handleMouseEnter}>
+                                <a className="contents" href={section[1]}>{section[0]}</a>
+                        </li>
+                    );
                 })}
             </ul>
 
@@ -96,12 +100,16 @@ const NavigationBar = ({className}) => {
 
             <ul className=" Social-Icons flex contents ">
                 {socialIconList.map((Icon, index) => {
-                    return <li key={index} id={`icon-${index}`} className=" inline-grid items-center h-[60px] " onMouseEnter={handleMouseEnter}><a className="contents" href={Icon[1]}>{Icon[0]}</a></li>;
+                    return (
+                        <li key={index} id={`icon-${index}`} className=" inline-grid items-center h-[60px] " onMouseEnter={handleMouseEnter}>
+                            <a className="contents" href={Icon[1]}>{Icon[0]}</a>
+                        </li>
+                    );
                 })}
             </ul>
 
             {bobl}
-        </div>
+        </nav>
         
     );
 }

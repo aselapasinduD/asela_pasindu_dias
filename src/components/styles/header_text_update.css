@@ -1,0 +1,13 @@
+.Header .headerText {
+    border-right-width: 8px;
+    border-right-color: #ffffffff;
+    animation: blink 1s linear infinite alternate;
+}
+@keyframes blink {
+    from {
+        border-right-color: #ffffffff;
+    }
+    to {
+        border-right-color: #ffffff00;
+    }
+}

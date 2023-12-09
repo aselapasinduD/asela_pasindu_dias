@@ -1,4 +1,5 @@
-import './App.css';
+import React from 'react';
+
 import Header from './components/header';
 import AboutMe from './components/about_me';
 import Skills from './components/skills';
@@ -7,6 +8,7 @@ import BigProject from './components/big_project';
 import Footer from './components/footer';
 
 const App = () => {
+
   return (
     <div className="App text-center ">
       <Header />

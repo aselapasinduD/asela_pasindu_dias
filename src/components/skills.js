@@ -22,22 +22,10 @@ const skillBoxs = [
             ['Problem-Solving', 'Communication', 'Time Management', 'Continuous Learning' ]
         ]
     ],
-    ['Graphic Design', 46,
+    ['UI/UX Design', 80,
         [
-            ['Analysis', 'Communication', 'Emotional Intelligence', 'Teamwork'],
-            ['Resilience', 'Research', 'Adaptability', 'Decision-making', 'Creativity']
-        ]
-    ],
-    ['Problem Solving', 46,
-        [
-            ['Analysis', 'Communication', 'Emotional Intelligence', 'Teamwork'],
-            ['Resilience', 'Research', 'Adaptability', 'Decision-making', 'Creativity']
-        ]
-    ],
-    ['Problem Solving', 46,
-        [
-            ['Analysis', 'Communication', 'Emotional Intelligence', 'Teamwork'],
-            ['Resilience', 'Research', 'Adaptability', 'Decision-making', 'Creativity']
+            ['UX Research', 'Figma', 'Photoshop', 'Wireframing', 'Prototyping' ],
+            ['Empathy', 'Collaboration', 'Critical Thinking' ]
         ]
     ]
 ];
@@ -105,8 +93,8 @@ const Skills = () => {
     }
 
     return (
-        <div id="skills" data-testid="skills" className=" sections Skills flex flex-col items-center bg-sky-300 ">
-            <h1>What I Can Do</h1>
+        <div id="skills" data-testid="skills" className=" sections Skills flex flex-col items-center ">
+            <h1 className=" mb-4 ">What I Can Do</h1>
             <div className=" skillBoxs w-max grid grid-cols-3 gap-10 mb-12 ">
                     {skillBoxs.map((skillbox, index) => {
                         return (
