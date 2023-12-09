@@ -4,7 +4,6 @@ import MyPhoto2 from '../assests/myphoto2.png';
 import './styles/about_me.css';
 
 const AboutMe = () => {
-    console.log("Render About Me Section");
     return (
         <div id="aboutme" data-testid="aboutMe" className=" sections AboutMe ">
             <h1>Who Am I</h1>

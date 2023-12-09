@@ -27,7 +27,6 @@ const Facebook = <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xml
 </svg>;
 
 const NavigationBar = ({className}) => {
-    console.log("Render Navigation Bar");
 
     const sectionList = [
         ['About me', '#aboutme'],

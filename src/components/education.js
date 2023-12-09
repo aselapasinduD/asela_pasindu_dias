@@ -36,7 +36,6 @@ const educationsQualificationSection = [
 ]
 
 const Education = () => {
-    console.log("Render Education Section");
     return (
         <div id="education" data-testid="education" className=" sections education ">
             <h1>What I Know</h1>

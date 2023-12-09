@@ -31,7 +31,6 @@ const skillBoxs = [
 ];
 
 const percentageBox = (percentage, boxSize) => {
-    console.log("Render Skill Percentage Box");
 
     const percentageBarSize = 15;
     const strokeDasharray = 1214;
@@ -73,7 +72,6 @@ const percentageBox = (percentage, boxSize) => {
 
 
 const Skills = () => {
-    console.log("Render Skill Section");
 
     const getSkillBoxSizes = useRef([]);
   

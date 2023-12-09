@@ -4,7 +4,6 @@ import React from "react";
 import './styles/footer_quick_email.css'
 
 const Footer = () => {
-    console.log("Render Footer Section");
     return (
         <footer id="footer" data-testid="footer" className=" sections Footer ">
             <hr className=" border-[#FF6600] my-2 " />

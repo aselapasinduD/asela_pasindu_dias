@@ -33,7 +33,6 @@ const projectList = [
 ]
 
 const BigProject = () => {
-    console.log("Render Big Projects Section");
 
     const boxWidth = 340;
     const boxHeight = 460;

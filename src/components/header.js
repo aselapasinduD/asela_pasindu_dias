@@ -10,7 +10,6 @@ import Myphoto from '../assests/myphoto.png';
 const myHeaders = ["Asela Pasindu", "a Full Stack Developer", "a Software Engineer", "a UI/UX Designer"]
 
 const Header = () => {
-    console.log("Render Header Section");
 
     return (
         <header id="header" data-testid="header" className="sections Header relative w-full h-Sheader ">

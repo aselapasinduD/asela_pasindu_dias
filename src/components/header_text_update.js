@@ -3,7 +3,6 @@ import React, { useState , useEffect } from "react";
 import './styles/header_text_update.css';
 
 const HeaderText = ({myHeaders}) => {
-    console.log("Render Header Text");
 
     const period = 1000;
     const delta = 100;
@@ -16,7 +15,6 @@ const HeaderText = ({myHeaders}) => {
         let wordPosition = loopNumber % myHeaders.length;
         let getText = myHeaders[wordPosition];
         let updateWord = isWordDeleted ? getText.substring(0, word.length - 1) : getText.substring(0, word.length + 1);
-        console.log('Delata Value: ', deltaValue);
 
         getWord(updateWord);
         if (isWordDeleted) {
