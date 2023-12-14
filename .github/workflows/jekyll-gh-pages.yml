@@ -29,9 +29,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Node.js environment
-        uses: actions/setup-node@latest
-        with:
-          node-version: '21'
+        uses: actions/setup-node@v21.0.0
       - name: Install Node.js Packages and Run build
         run: |
           npm i
