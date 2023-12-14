@@ -31,9 +31,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2
       - name: Install Node.js Packages and Run build
-        run: |
-          npm i
-          npm run build
+        run: npm install
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
