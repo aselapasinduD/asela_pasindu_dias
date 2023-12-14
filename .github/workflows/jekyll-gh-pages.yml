@@ -42,7 +42,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
       - name: show folders
-        run: dir
+        run: dir ./_site
 
   # Deployment job
   deploy:
