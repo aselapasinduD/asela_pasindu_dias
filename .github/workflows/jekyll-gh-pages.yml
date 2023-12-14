@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Node.js environment
         uses: actions/setup-node@v2
-      - name: Install Node.js Packages and Run build
+      - name: Install Node.js packages and run build
         run: npm install
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -41,6 +41,8 @@ jobs:
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
+      - name: show folders
+        run: dir
 
   # Deployment job
   deploy:
