@@ -38,7 +38,7 @@ jobs:
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
-          destination: ./build
+          destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
       - name: show folders
@@ -50,10 +50,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: _site
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
         with:
-          folder: ./build
+          folder: ./_site
