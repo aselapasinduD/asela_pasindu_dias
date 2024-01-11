@@ -1,5 +1,6 @@
 .projectBox {
     background-color: #ffedcd11;
+    scroll-behavior: smooth;
 }
 .projectImage {
     scale: 100%;
@@ -9,4 +10,13 @@
 .projectBox:hover .projectImage {
     scale: 110%;
     transition-duration: 0.5s;
+}
+.projectBoxsScroll{
+    user-select: none;
+}
+.projectBoxsScroll:active{
+    cursor: grab;
+}
+.projectBoxsScroll::-webkit-scrollbar {   
+    display: none;
 }
