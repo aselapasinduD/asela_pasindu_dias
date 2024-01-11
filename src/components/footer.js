@@ -51,10 +51,11 @@ const Footer = () => {
                 </form>
             </div>
             <hr className=" border-[#FF6600] my-2 " />
-            <div className=" flex mb-2">
-                <p className=" flex-1 text-left ">copyright©AselaPasinduDias</p>
-                <p>0.2v - 2023/11/03</p>
+            <div className=" relative mb-2">
+                <p className=" text-center text-[15px] ">© 2024 Asela Pasindu Dias All rights reserved.<br/>Developed by VEBDRAKstudio.</p>
+                <p className=" absolute top-0 right-0 text-[12px]">Last Update - 2024-01 - 0.2v</p>
             </div>
+            
         </footer>
     );
 }

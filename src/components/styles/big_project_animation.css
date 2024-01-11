@@ -1,52 +1,12 @@
 .projectBox {
-    perspective: 1200px;
+    background-color: #ffedcd11;
 }
-.projectBox .imageAni{
-    transition: scale 1s, transform 1.5s;
+.projectImage {
+    scale: 100%;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
 }
-.projectBox .backgroundAni {
-    transition: transform 1.5s;
-}
-.projectBox .projectDetailsAni {
-    transition: transform 1.5s;
-}
-.projectBox .projectName {
-    transition: transform 1.5s;
-}
-
-.projectBox:hover .imageAni {
-    scale:80%;
-    transform: rotateY(30deg) skewX(10deg) translateX(-42%);
-}
-
-.projectBox:hover .backgroundAni {
-    transform: rotateY(-380deg) skewX(-20deg) translateX(10%);
-}
-.projectBox .backgroundAni:active {
-    transform: rotateY(-360deg) skewX(0deg) translateX(0%);
-    z-index: 5;
-}
-.projectBox .backgroundAni:active ~ .projectBox .imageAni {
-    transform: rotateY(90deg) skewX(-20deg) translateX(10%);
-}
-
-.projectBox:hover .projectDetailsAni {
-    transform: rotateY(-20deg) skewX(-20deg) translate(0px, 40px);
-}
-
-.projectBox:hover .projectName {
-    transform: rotateY(-20deg) skewX(-20deg) translate(62%, 9%);
-}
-
-.projectBox.hover .projectDetailSlide {
-    animation: textSlide 1.5s linear;
-}
-
-@keyframes textSlide {
-    from {
-        transform: translateX(0%);
-    }
-    to {
-        transform: translateX(20%);
-    }
+.projectBox:hover .projectImage {
+    scale: 110%;
+    transition-duration: 0.5s;
 }

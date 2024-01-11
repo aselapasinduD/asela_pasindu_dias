@@ -6,65 +6,86 @@ import './styles/big_project_animation.css';
 import MyPhoto2 from '../assests/myphoto2.png';
 
 const projectList = [
-    [
-        'Data Scraping Software',
-        ['Collect users data from social media and use for markating', 'This software is made using python and telethon libiry. this software underconstraction and after constraction is done it will able to get users data from Telegram, WhatsApp, Facebook, etc.', '10-2023']
-    ],
-    [
-        'Project Name',
-        ['Project Details', 'Project Date', 'Project Purpose']
-    ],
-    [
-        'Project Name',
-        ['Project Details', 'Project Date', 'Project Purpose']
-    ],
-    [
-        'Project Name',
-        ['Project Details', 'Project Date', 'Project Purpose']
-    ],
-    [
-        'Project Name',
-        ['Project Details', 'Project Date', 'Project Purpose']
-    ],
-    [
-        'Project Name',
-        ['Project Details', 'Project Date', 'Project Purpose']
-    ]
+    {
+        Name: 'Data Scraping Software',
+        Date: '10-2023',
+        Details:['Collect users data from social media and use for markating', 'This software is made using python and telethon libiry. this software underconstraction and after constraction is done it will able to get users data from Telegram, WhatsApp, Facebook, etc.' ]
+    },
+    {
+        Name: 'Project Name',
+        Date: '2000-10',
+        Details: ['Project Details', 'Project Purpose']
+    },
+    {
+        Name: 'Project Name',
+        Date: '2000-10',
+        Details: ['Project Details', 'Project Purpose']
+    },
+    {
+        Name: 'Project Name',
+        Date: '2000-10',
+        Details: ['Project Details', 'Project Purpose']
+    },
+    {
+        Name: 'Project Name',
+        Date: '2000-10',
+        Details: ['Project Details', 'Project Purpose']
+    },
+    {
+        Name: 'Project Name',
+        Date: '2000-10',
+        Details: ['Project Details', 'Project Purpose']
+    }
 ]
 
 const BigProject = () => {
 
-    const boxWidth = 340;
-    const boxHeight = 460;
-
     return (
-        <div id="bigproject" data-testid="bigProject" className=" sections BigProject bg-[#FF6600] ">
+        <div id="bigproject" data-testid="bigProject" className=" sections BigProject">
             <h1>What I Did</h1>
-            <div className=" projectBoxs grid grid-cols-3 gap-[30px] place-items-center mx-[30px] pb-10 ">
+            <div className=" projectBoxs grid grid-cols-3 gap-[22px] mx-[30px] pb-10 ">
                 {projectList.map((project, index) => {
                     return (
-                        <div key={index} className=" flex projectBox width-max justify-center">
-                            <div 
-                                className={` imageAni absolute overflow-hidden rounded-[30px] z-[2] transform-gpu `}
-                                style={{
-                                    width: boxWidth,
-                                    height: boxHeight
-                                }}>
-                                <img className=" absolute content h-[460px] object-cover " alt="Project" src={MyPhoto2} />
+                        <div key={index}
+                            className="
+                                projectBox
+                                max-h-[530px]
+                                max-w-[530px]
+                                min-h-[300px]
+                                min-w-[300px]
+                                aspect-square
+                                rounded-[30px]
+                                overflow-hidden
+                                text-left
+                                "
+                        >
+                            <div className=" projectImageHolder max-w-[530px] h-1/2 rounded-[30px] overflow-hidden ">
+                                <div 
+                                    className=" projectImage w-full h-full bg-cover bg-top "
+                                    style={{
+                                        backgroundImage: `url(${MyPhoto2})`
+                                        }}
+                                ></div>
                             </div>
-                            <ul className=" projectDetailsAni absolute flex flex-col space-y-[18px] text-left z-[1] ">
-                                {project[1].map((projectDetails, index) => {
-                                    return (<li key={index} className=" projectDetailSlide text-black " style={{transform: 'translateX(' + (18 * index) + '%)', fontSize: '20px'}}>{projectDetails}</li>)
-                                })}
-                            </ul>
-                            <h2 className=" projectName absolute text-[28px] z-[1] font-semibold text-black ">{project[0]}</h2>
-                            <div 
-                                className=" backgroundAni bg-gray-300 rounded-[32px] "
-                                style={{
-                                    width: boxWidth,
-                                    height: boxHeight
-                                }}>
-                                </div>
+                            <div className=" px-[10px]">
+                                <h2 className=" projectName text-[28px] z-[1] font-semibold ">{project.Name}</h2>
+                                <p>{project.Date}</p>
+                                <ul className=" projectDetailsAni ">
+                                    {project.Details.map((projectDetails, index) => {
+                                        return (
+                                            <li
+                                                key={index}
+                                                className=" projectDetailSlide "
+                                                style={{
+                                                    fontSize: '20px'
+                                                    }}
+                                            >
+                                                <p>{projectDetails}</p>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            </div>
                         </div>
                     )
                 })}
