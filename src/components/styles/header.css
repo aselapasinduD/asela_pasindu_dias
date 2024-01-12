@@ -1,7 +1,25 @@
 .image img{
-    transition: opacity 1s ease-out;
+    opacity: 0%;
+    transition: 2s ease-out;
 }
 
-.image img .loaded {
+.image .loaded {
     opacity: 100%;
+}
+.image::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: url('../../assests/myphoto-blur.png');
+    background-size: cover;
+    background-position: top center;
+    opacity: 100%;
+    transition: opacity 1s ease-out;
+    transition-delay: 0.8s;
+}
+.image.hide::before{
+    opacity: 0%;
 }
