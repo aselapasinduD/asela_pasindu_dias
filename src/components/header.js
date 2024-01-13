@@ -7,7 +7,7 @@ import NavigationBar from './navigation_bar';
 import HeaderText from './header_text_update';
 import Myphoto from '../assests/myphoto-small.png';
 
-const myHeaders = ["Asela Pasindu", "a Full Stack Developer", "a Software Engineer", "a UI/UX Designer"];
+const myHeaders = ["Asela Pasindu Dias", "a Full Stack Developer", "a Software Engineer", "a UI/UX Designer"];
 
 const Header = () => {
     const [ Loaded, IsLoaded ] = useState(false);

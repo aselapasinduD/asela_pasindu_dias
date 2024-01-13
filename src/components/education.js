@@ -3,36 +3,110 @@ import React from "react";
 
 import './styles/education_animation.css';
 
-const programingLanguage = [
-    ['C#', []],
-    ["C++", []],
-    ["PHP", []],
-    ["Python", [["testing", "#"], ["testing1", "#"]]],
-    ["JavaScript", []],
-    ["HTML", []],
-    ["CSS", [["HackerRank CSS", "https://www.hackerrank.com/certificates/383ff2a6827c"],['testing one', '#']]],
-    ["Java", []]
+const programingLanguage =[
+    {
+        language:'C#',
+        reference: []
+    },
+    {
+        language: "C++", 
+        reference: []
+    },
+    {
+        language: "PHP",
+        reference: []
+    },
+    {
+        language: "Python", 
+        reference: [
+            {
+                name: "testing",
+                url: "#"
+            },
+            {
+                name: "testing1",
+                url: "#"
+            }
+        ]
+    },
+    {
+        language: "JavaScript",
+        reference: []
+    },
+    {
+        language: "HTML",
+        reference: []
+    },
+    {
+        language: "CSS",
+        reference: [
+            {
+                name: "HackerRank CSS",
+                url: "https://www.hackerrank.com/certificates/383ff2a6827c"
+            },
+            {
+                name: 'testing one',
+                url: '#'
+            }
+        ]
+    },
+    {
+        language: "Java",
+        reference: []
+    }
 ];
+
 const educationsQualificationSection = [
-    [
-        ['UOM Open Learning - Full Stack Development', 'https://open.uom.lk/fullstack-developer.html'],
-        [
-            ['Python-1', 'https://open.uom.lk/mod/customcert/view.php?id=675&downloadown=1'],
-            ['Python-2', 'https://open.uom.lk/lms/mod/customcert/view.php?id=838&downloadown=1'],
-            ['Web Development-1', 'https://open.uom.lk/lms/mod/customcert/view.php?id=697&downloadown=1'],
-            ['Web Development-2', 'https://open.uom.lk/mod/customcert/view.php?id=839&downloadown=1'],
-            ['Web Development-3', '#']
-        ]
-    ],
-    [
-        ['FreeCodeCamp', 'https://www.freecodecamp.org/news/about/'],
-        [
-            ['Scientific Computing With Python', 'https://www.freecodecamp.org/certification/asela/scientific-computing-with-python-v7'], 
-            ['Responsive Web Design', 'https://www.freecodecamp.org/certification/asela/responsive-web-design'], 
-            ['JavaScript Algorithms and Data Structures', '#'], 
-            ['Foundational C# With Microsoft', '#'], 
-        ]
-    ]
+    {
+        platformName:'UOM Open Learning - Full Stack Development',
+        platformUrl:'https://open.uom.lk/fullstack-developer.html',
+        courses: 
+            [
+                {
+                    name: 'Python-1',
+                    url: 'https://open.uom.lk/mod/customcert/view.php?id=675&downloadown=1'
+                },
+                {
+                    name: 'Python-2',
+                    url: 'https://open.uom.lk/lms/mod/customcert/view.php?id=838&downloadown=1'
+                },
+                {
+                    name: 'Web Development-1',
+                    url: 'https://open.uom.lk/lms/mod/customcert/view.php?id=697&downloadown=1'
+                },
+                {
+                    name: 'Web Development-2',
+                    url: 'https://open.uom.lk/mod/customcert/view.php?id=839&downloadown=1'
+                },
+                {
+                    name: 'Web Development-3',
+                    url: '#'
+                }
+            ]
+    },
+    {
+        platformName: 'FreeCodeCamp',
+        platformUrl: 'https://www.freecodecamp.org/news/about/',
+        courses:
+            [
+                {
+                    name: 'Scientific Computing With Python',
+                    url: 'https://www.freecodecamp.org/certification/asela/scientific-computing-with-python-v7'
+                }, 
+                {
+                    name: 'Responsive Web Design',
+                    url: 'https://www.freecodecamp.org/certification/asela/responsive-web-design'
+                }, 
+                {
+                    name: 'JavaScript Algorithms and Data Structures',
+                    url: '#'
+                }, 
+                {
+                    name: 'Foundational C# With Microsoft',
+                    url: 'https://www.freecodecamp.org/certification/asela/foundational-c-sharp-with-microsoft'
+                }, 
+            ]
+    }
 ]
 
 const Education = () => {
@@ -44,9 +118,11 @@ const Education = () => {
                     {programingLanguage.map((Language, index) => {
                         return (
                             <li key={index} className=" relative flex items-center justify-center ">
-                                <p className={` languageName ${Language[1].length !== 0 ? 'languageNameHover': ''} border-x-2 text-[32px] font-semibold overflow-hidden `}>{Language[0]}</p>
-                                    {Language[1].map((certificat, index) => {
-                                    return <a key={index} href={certificat[1]} className=" hidden font-normal text-[26px] hover:text-sky-400 border-x-2 whitespace-nowrap overflow-hidden " rel="noreferrer" target="_blank" >{certificat[0]}</a>
+                                <p className={` languageName ${Language.reference.length !== 0 ? 'languageNameHover': ''} border-x-2 text-[32px] font-semibold overflow-hidden `}>{Language.language}</p>
+                                    {Language.reference.map((certificat, index) => {
+                                    return <a key={index} href={certificat.url} className=" hidden font-normal text-[26px] hover:text-sky-400 border-x-2 whitespace-nowrap overflow-hidden " rel="noreferrer" target="_blank" >
+                                            {certificat.name}
+                                        </a>
                                     })}
                             </li>)
                     })}
@@ -60,14 +136,14 @@ const Education = () => {
                     {educationsQualificationSection.map((items, index) => {
                         return (
                             <div key={index} className="">
-                                <h2 key={index + '.1'} className=" text-[32px] "><a href={items[0][1]} className=" hover:text-sky-700 " rel="noreferrer" target="_blank">{items[0][0]}</a></h2>
+                                <h2 key={index + '.1'} className=" text-[32px] "><a href={items.platformUrl} className=" hover:text-sky-700 " rel="noreferrer" target="_blank">{items.platformName}</a></h2>
                                 <span key={index + '.2'} className=" block bg-[#FF6600] w-[80px] h-[3px] translate-x-[-14px] rounded-full "></span>
                                 <ul className=" flex text-[16px] text-center ">
-                                    {items[1].map((course, index) => {
+                                    {items.courses.map((course, index) => {
                                         return (
                                             <li key={index} className=" flex-1 border-r-2 border-black px-2 last:border-none ">
-                                                <a href={course[1]} className=" hover:text-sky-700" rel="noreferrer" target="_blank" >
-                                                    {course[0]}
+                                                <a href={course.url} className=" hover:text-sky-700" rel="noreferrer" target="_blank" >
+                                                    {course.name}
                                                 </a>
                                             </li>
                                         )

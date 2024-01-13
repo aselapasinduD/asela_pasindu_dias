@@ -19,11 +19,12 @@
 .bobl:active {
     scale: 80%;
 }
-.Social-Icons svg path {
+
+/* .Social-Icons svg path {
     fill: #FF6600;
     box-shadow: 1px 1px 1px 1px gray;
 }
 .Social-Icons svg polygon {
     fill: #FF6600;
     box-shadow: 1px 1px 1px 1px gray;
-}
+} */

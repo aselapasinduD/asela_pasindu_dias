@@ -1,22 +1,80 @@
+/* Project Box Animations */
 .projectBox {
     background-color: #ffedcd11;
     scroll-behavior: smooth;
 }
+.projectBox .projectNameLine {
+    transition: width 0.5s ease-in-out; 
+}
+.projectBox:not(:hover) .projectNameLine {
+    width: 4px !important;
+    transition: width 1s ease-in-out;
+}
+.moreDetailsButton {
+    scale: 100%;
+    border-bottom: 2px solid rgb(255, 255, 255, 0);
+    transition: scale 0.2s ease-in-out;
+    transition: border-bottom 1s ease-in-out;
+}
+.moreDetailsButton:active {
+    scale: 93%;
+}
+.projectBox:hover .moreDetailsButton {
+    border-bottom: 2px solid rgba(255, 255, 255, 100);
+    transition: border-bottom 1s ease-in-out;
+}
+.projectBoxs .dragBox {
+    border: 2px solid white;
+    user-select: none;
+    user-zoom: none;
+}
+.projectBoxs .dragBox::before {
+    content: "";
+    position: inherit;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    opacity: 25%;
+}
+
+/* Project Image */
 .projectImage {
     scale: 100%;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
 }
+.projectImageShining {
+    transform: rotate(35deg) translateY(-25%);
+    translate: -400%;
+    transition: translate 1s ease-in-out;
+}
+.projectImageShining > span {
+    filter: brightness(1000%);
+}
 .projectBox:hover .projectImage {
-    scale: 110%;
+    scale: 115%;
     transition-duration: 0.5s;
 }
-.projectBoxsScroll{
-    user-select: none;
+.projectBox:hover .projectImageShining {
+    translate: 1500%;
+    transition-duration: 0.5s;
 }
+
+/* Active Mouse */
 .projectBoxsScroll:active{
-    cursor: grab;
+    cursor: grabbing;
 }
+.projectBox:active{
+    cursor: grabbing;
+}
+
+/* Scrollbar */
 .projectBoxsScroll::-webkit-scrollbar {   
     display: none;
 }
