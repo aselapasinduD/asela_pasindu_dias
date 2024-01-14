@@ -1,6 +1,7 @@
 //About Me Section
 import React from "react";
 import MyPhoto2 from '../assests/myphoto2.png';
+
 import './styles/about_me.css';
 
 const AboutMe = () => {
