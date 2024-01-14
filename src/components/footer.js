@@ -4,6 +4,26 @@ import React from "react";
 import './styles/footer_quick_email.css'
 
 const Footer = () => {
+    const peoperPerHourHtml = `
+        <!--
+        PeoplePerHour Profile Widget
+        The div#pph-hire me is the element
+        where the iframe will be inserted.
+        You may move this element wherever
+        you need to display the widget
+        -->
+        <div id="pph-hireme"></div>
+        <script type="text/javascript">
+        (function(d, s) {
+            var useSSL = 'https:' == document.location.protocol;
+            var js, where = d.getElementsByTagName(s)[0],
+            js = d.createElement(s);
+            js.src = (useSSL ? 'https:' : 'http:') +  '//www.peopleperhour.com/hire/801905547/5255612.js?width=245&height=320&orientation=vertical&theme=dark&rnd='+parseInt(Math.random()*10000, 10);
+            try { where.parentNode.insertBefore(js, where); } catch (e) { if (typeof console !== 'undefined' && console.log && e.stack) { console.log(e.stack); } }
+        }(document, 'script'));
+        </script>
+    `;
+
     return (
         <footer id="footer" data-testid="footer" className=" sections Footer ">
             <hr className=" border-[#FF6600] my-2 " />
@@ -11,6 +31,7 @@ const Footer = () => {
                 <ul className=" flex-1 ">
                     <li>asela.pasindu.dias17@gmail.com</li>
                     <li>Telephone - 0789991578 - 8am : 6pm</li>
+                    <li><div dangerouslySetInnerHTML={{__html: peoperPerHourHtml}}></div></li>
                 </ul>
                 <ul className=" flex-1 ">
                     <li>English - Professional</li>
@@ -61,3 +82,4 @@ const Footer = () => {
 }
 
 export default Footer;
+

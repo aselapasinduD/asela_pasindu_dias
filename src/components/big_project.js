@@ -9,32 +9,38 @@ const projectList = [
     {
         Name: 'Data Scraping Software',
         Date: '10-2023',
-        Details:['Collect users data from social media and use for markating', 'This software is made using python and telethon libiry. this software underconstraction and after constraction is done it will able to get users data from Telegram, WhatsApp, Facebook, etc.' ]
+        Details:['Collect users data from social media and use for markating', 'This software is made using python and telethon libiry. this software underconstraction and after constraction is done it will able to get users data from Telegram, WhatsApp, Facebook, etc.' ],
+        url: "#"
+    },
+    {
+        Name: 'Full-Stack-Admin',
+        Date: '12-2023',
+        Details: ['This is a admin side of a webpage. This webpage have a', 'Project Purpose'],
+        url: "#"
+    },
+    {
+        Name: 'React-Admin',
+        Date: '11-2023',
+        Details: ['Project Details', 'Project Purpose'],
+        url: "#"
     },
     {
         Name: 'Project Name',
         Date: '2000-10',
-        Details: ['Project Details', 'Project Purpose']
+        Details: ['Project Details', 'Project Purpose'],
+        url: "#"
     },
     {
         Name: 'Project Name',
         Date: '2000-10',
-        Details: ['Project Details', 'Project Purpose']
+        Details: ['Project Details', 'Project Purpose'],
+        url: "#"
     },
     {
         Name: 'Project Name',
         Date: '2000-10',
-        Details: ['Project Details', 'Project Purpose']
-    },
-    {
-        Name: 'Project Name',
-        Date: '2000-10',
-        Details: ['Project Details', 'Project Purpose']
-    },
-    {
-        Name: 'Project Name',
-        Date: '2000-10',
-        Details: ['Project Details', 'Project Purpose']
+        Details: ['Project Details', 'Project Purpose'],
+        url: "#"
     }
 ]
 
@@ -161,6 +167,7 @@ const BigProject = () => {
                             <button
                                 onClick={handleButtonClick}
                                 className=" moreDetailsButton absolute w-max right-[34px] bottom-[14px] rounded-[4px] "
+                                href={project.url}
                             >
                                 More Details
                             </button>
