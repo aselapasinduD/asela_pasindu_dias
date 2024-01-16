@@ -3,43 +3,53 @@ import React, { useState, useRef, useLayoutEffect } from "react";
 
 import './styles/big_project_animation.css';
 
-import MyPhoto2 from '../assests/myphoto2.png';
+import DefaultBanner from '../assests/myphoto2.png';
+import MarkdownBanner from '../assests/project_images/Markdown-Editor-0.2v-2024-01-16.png';
+import DataScrapingBanner from '../assests/project_images/Data-Scraping-0.1v-2024-01-16.png';
+import FullStackAdminBanner from '../assests/project_images/Full-Stack-Adminl-2024-01-16.png';
+import CrudderAppBanner from '../assests/project_images/Cruddur-App-2024-01-16.jpg';
 
 const projectList = [
     {
         Name: 'Data Scraping Software',
         Date: '10-2023',
-        Details:['Collect users data from social media and use for markating', 'This software is made using python and telethon libiry. this software underconstraction and after constraction is done it will able to get users data from Telegram, WhatsApp, Facebook, etc.' ],
-        url: "#"
+        Details:[ 'This software is made using python and telethon libiry. this software underconstraction and after constraction is done it will able to get users data from Telegram, WhatsApp, Facebook, etc.', 'Collect users data from social media and use for markating' ],
+        image: DataScrapingBanner,
+        url: "https://github.com/aselapasinduD/Data_Scraping_Software"
     },
     {
-        Name: 'Full-Stack-Admin',
+        Name: 'Full Stack Admin',
         Date: '12-2023',
-        Details: ['This is a admin side of a webpage. This webpage have a', 'Project Purpose'],
-        url: "#"
+        Details: ['This is a admin side of a webpage. This web page is design using MERN Stack framework.', 'Project Purpose'],
+        image: FullStackAdminBanner,
+        url: "https://github.com/aselapasinduD/fullstack-admin-mern"
     },
     {
-        Name: 'React-Admin',
+        Name: 'AWS bootcamp cruddur 2023',
         Date: '11-2023',
+        Details: ['This is a bootcamp orgenaize by Andrew Brown(omenking). In this bootcamp we created cruddur app(twitter clone).', 'Purpose of this bootcamp is to learn about AWS and how professional developers are working together to create this app.'],
+        image: CrudderAppBanner,
+        url: "https://github.com/aselapasinduD/aws-bootcamp-cruddur-2023"
+    },
+    {
+        Name: 'Markdown Editor electron',
+        Date: '12-2023',
+        Details: ['This app is created as a fun project. I use vite-electron-builder template to create this app. and I use typescript as a mean language to create this app.', 'I create this app for learing purpose'],
+        image: MarkdownBanner,
+        url: "https://github.com/aselapasinduD/Markdown-Editor-electron"
+    },
+    {
+        Name: 'Project Name',
+        Date: '2000-10',
         Details: ['Project Details', 'Project Purpose'],
+        image: '',
         url: "#"
     },
     {
         Name: 'Project Name',
         Date: '2000-10',
         Details: ['Project Details', 'Project Purpose'],
-        url: "#"
-    },
-    {
-        Name: 'Project Name',
-        Date: '2000-10',
-        Details: ['Project Details', 'Project Purpose'],
-        url: "#"
-    },
-    {
-        Name: 'Project Name',
-        Date: '2000-10',
-        Details: ['Project Details', 'Project Purpose'],
+        image: '',
         url: "#"
     }
 ]
@@ -140,14 +150,14 @@ const BigProject = () => {
                                 <div 
                                     className=" projectImage w-full h-full bg-cover bg-top "
                                     style={{
-                                        backgroundImage: `url(${MyPhoto2})`
+                                        backgroundImage: `url(${(project.image) === '' ? DefaultBanner : project.image })`
                                         }}
                                 ></div>
                             </div>
                             <div className=" px-[10px]">
-                                <h2 className=" projectName w-max text-[28px] font-semibold " ref={projectNameRefList[index]}>{project.Name}</h2>
+                                <h2 className=" projectName w-max text-[1.6rem] font-semibold " ref={projectNameRefList[index]}>{project.Name}</h2>
                                 <span className=" projectNameLine block w-[4px] h-[4px] bg-white rounded-[99999px] " ref={updateLineWidthRefList[index]}></span>
-                                <p className=" text-[14px] ">{project.Date}</p>
+                                <p className=" text-[0.8rem] ">{project.Date}</p>
                                 <ul className=" projectDetailsAni mt-[10px] ">
                                     {project.Details.map((projectDetails, index) => {
                                         return (
@@ -155,7 +165,7 @@ const BigProject = () => {
                                                 key={index}
                                                 className=" projectDetailSlide "
                                                 style={{
-                                                    fontSize: '18px'
+                                                    fontSize: '1.05rem'
                                                     }}
                                             >
                                                 <p>{projectDetails}</p>
@@ -165,9 +175,8 @@ const BigProject = () => {
                                 </ul>
                             </div>
                             <button
-                                onClick={handleButtonClick}
-                                className=" moreDetailsButton absolute w-max right-[34px] bottom-[14px] rounded-[4px] "
-                                href={project.url}
+                                className=" moreDetailsButton absolute text-[1.1rem] w-max right-[34px] bottom-[14px] rounded-[4px] "
+                                onClick={() => {window.open(project.url, "_blank")}}
                             >
                                 More Details
                             </button>

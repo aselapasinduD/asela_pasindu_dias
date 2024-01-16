@@ -1,7 +1,7 @@
 //footer section
 import React, { useEffect, useRef } from "react";
 
-import './styles/footer_quick_email.css'
+import './styles/footer_quick_email.css';
 
 const Footer = () => {
     const dataFatch = useRef(false);
