@@ -1,5 +1,5 @@
 //Big Project Section
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
 
 import './styles/big_project_animation.css';
 
@@ -9,12 +9,19 @@ import DataScrapingBanner from '../assests/project_images/Data-Scraping-0.1v-202
 import FullStackAdminBanner from '../assests/project_images/Full-Stack-Adminl-2024-01-16.png';
 import CrudderAppBanner from '../assests/project_images/Cruddur-App-2024-01-16.jpg';
 
+// Blur Images
+import MarkdownBannerBlur from '../assests/project_images/Markdown-Editor-0.2v-2024-01-16-blur.png';
+import DataScrapingBannerBlur from '../assests/project_images/Data-Scraping-0.1v-2024-01-16-blur.png';
+import FullStackAdminBannerBlur from '../assests/project_images/Full-Stack-Adminl-2024-01-16-blur.png';
+import CrudderAppBannerBlur from '../assests/project_images/Cruddur-App-2024-01-16-blur.jpg';
+
 const projectList = [
     {
         Name: 'Data Scraping Software',
         Date: '10-2023',
         Details:[ 'This software is made using python and telethon libiry. this software underconstraction and after constraction is done it will able to get users data from Telegram, WhatsApp, Facebook, etc.', 'Collect users data from social media and use for markating' ],
         image: DataScrapingBanner,
+        imageBlur: DataScrapingBannerBlur,
         url: "https://github.com/aselapasinduD/Data_Scraping_Software"
     },
     {
@@ -22,6 +29,7 @@ const projectList = [
         Date: '12-2023',
         Details: ['This is a admin side of a webpage. This web page is design using MERN Stack framework.', 'Project Purpose'],
         image: FullStackAdminBanner,
+        imageBlur: FullStackAdminBannerBlur,
         url: "https://github.com/aselapasinduD/fullstack-admin-mern"
     },
     {
@@ -29,6 +37,7 @@ const projectList = [
         Date: '11-2023',
         Details: ['This is a bootcamp orgenaize by Andrew Brown(omenking). In this bootcamp we created cruddur app(twitter clone).', 'Purpose of this bootcamp is to learn about AWS and how professional developers are working together to create this app.'],
         image: CrudderAppBanner,
+        imageBlur: CrudderAppBannerBlur,
         url: "https://github.com/aselapasinduD/aws-bootcamp-cruddur-2023"
     },
     {
@@ -36,6 +45,7 @@ const projectList = [
         Date: '12-2023',
         Details: ['This app is created as a fun project. I use vite-electron-builder template to create this app. and I use typescript as a mean language to create this app.', 'I create this app for learing purpose'],
         image: MarkdownBanner,
+        imageBlur: MarkdownBannerBlur,
         url: "https://github.com/aselapasinduD/Markdown-Editor-electron"
     },
     {
@@ -43,6 +53,7 @@ const projectList = [
         Date: '2000-10',
         Details: ['Project Details', 'Project Purpose'],
         image: '',
+        imageBlur: '',
         url: "#"
     },
     {
@@ -50,11 +61,14 @@ const projectList = [
         Date: '2000-10',
         Details: ['Project Details', 'Project Purpose'],
         image: '',
+        iamgeBlur: '',
         url: "#"
     }
 ]
 
 const BigProject = () => {
+    const onLoadImageList = projectList.map(() => React.createRef());
+    const loadingAnimationImageHolderList = projectList.map(() => React.createRef());
     // Get project name legnth
     const projectNameRefList = projectList.map(() => React.createRef());
     const updateLineWidthRefList = projectList.map(() => React.createRef());
@@ -103,9 +117,13 @@ const BigProject = () => {
         setIsMouseDown(false);
     }
 
-    // More Details Button Handle
-    const handleButtonClick = () => {
-        console.log("Click Button");
+    // Image On Load
+    const onLoadHandle = (index) => {
+        console.log(`loaded Image ${index}`);
+        onLoadImageList[index].current.style.opacity = 1;
+
+        const element = document.getElementsByClassName("projectImageHolder")[index];
+        element.style.setProperty('--display-setnone', 'none');
     }
 
     return (
@@ -142,17 +160,22 @@ const BigProject = () => {
                                 cursor-grab
                                 "
                         >
-                            <div className=" projectImageHolder relative max-w-[530px] h-1/2 rounded-[30px] overflow-hidden ">
+                            <div 
+                                className=" projectImageHolder relative max-w-[530px] h-1/2 rounded-[30px] overflow-hidden bg-cover bg-top "
+                                style={{ backgroundImage: `url(${project.imageBlur})`}}
+                                ref={loadingAnimationImageHolderList[index]}
+                            >
                                 <div className=" projectImageShining absolute flex gap-[8px] w-max h-[150%] z-[1]">
                                     <span className=" w-[26px] h-[100%] bg-white"></span>
                                     <span className=" w-[6px] h-[100%] bg-white"></span>
                                 </div>
-                                <div 
-                                    className=" projectImage w-full h-full bg-cover bg-top "
-                                    style={{
-                                        backgroundImage: `url(${(project.image) === '' ? DefaultBanner : project.image })`
-                                        }}
-                                ></div>
+                                <img
+                                    className=" projectImage w-full h-full object-cover object-top opacity-[0] "
+                                    src={(project.image) === '' ? DefaultBanner : project.image}
+                                    ref={onLoadImageList[index]}
+                                    onLoad={() => onLoadHandle(index)}
+                                />
+                                
                             </div>
                             <div className=" px-[10px]">
                                 <h2 className=" projectName w-max text-[1.6rem] font-semibold " ref={projectNameRefList[index]}>{project.Name}</h2>
