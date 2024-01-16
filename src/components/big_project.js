@@ -119,9 +119,8 @@ const BigProject = () => {
 
     // Image On Load
     const onLoadHandle = (index) => {
-        console.log(`loaded Image ${index}`);
         onLoadImageList[index].current.style.opacity = 1;
-
+        
         const element = document.getElementsByClassName("projectImageHolder")[index];
         element.style.setProperty('--display-setnone', 'none');
     }
