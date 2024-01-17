@@ -4,7 +4,7 @@
     backdrop-filter: blur(1px);
 }
 .nav_animation {
-    transition: transform 0.8s, width 0.7s;
+    transition: left 0.6s, width 0.6s;
     transition-timing-function: ease-out;
 }
 .NavigationBar a:active {

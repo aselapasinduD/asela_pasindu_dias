@@ -1,25 +1,49 @@
-.image img{
-    opacity: 0%;
-    transition: 2s ease-out;
+.headerImage {
+    --display-setnone2: block;
+    --display-setblock2: none;
 }
-
-.image .loaded {
+.headerImage img{
+    display: var(--display-setblock2);
+    filter: blur(0px);
     opacity: 100%;
 }
-.image::before{
+
+.headerImage .loaded {
+    animation: showImage 1s ease-out;
+}
+@keyframes showImage{
+    from{
+        filter: blur(15px);
+        opacity: 50%;
+    }
+    to{
+        filter: blur(0px);
+        opacity: 100%;
+    }
+}
+
+.headerImage::before{
+    display: var(--display-setnone2);
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 0;
     left: 0;
+    right: 0;
     background-image: url('../../assests/myphoto-blur.png');
+    filter: grayscale(0%) brightness(100%);
     background-size: cover;
-    background-position: top center;
-    opacity: 100%;
-    transition: opacity 1s ease-out;
-    transition-delay: 0.8s;
+    background-position: center;
+    animation: imageLoadingAnimation2 4s ease-in-out infinite;
 }
-.image.hide::before{
-    opacity: 0%;
+@keyframes imageLoadingAnimation2{
+    0%{
+        filter: grayscale(0%) brightness(100%);
+    }
+    50%{
+        filter: grayscale(200%) brightness(200%);
+    }
+    100%{
+        filter: grayscale(0%) brightness(100%);
+    }
 }

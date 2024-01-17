@@ -1,5 +1,5 @@
 .Header .headerText {
-    border-right-width: 8px;
+    border-right-width: 4px;
     border-right-color: #ffffffff;
     animation: blink 1s linear infinite alternate;
 }

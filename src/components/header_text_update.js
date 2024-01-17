@@ -40,7 +40,7 @@ const HeaderText = ({myHeaders}) => {
     }, [word]);
 
     return (
-        <h1 className=" headerText absolute w-max top-[390px] text-[48px] tracking-[13px] font-light ">Hi! I'm {word}</h1>
+        <h1 className=" headerText absolute w-max top-[360px] text-[48px] tracking-[13px] font-light ">Hi! I'm {word}</h1>
     )
 }
 

@@ -5,7 +5,7 @@ import './styles/navigation_bar.css';
 import './styles/navigation_bar_animation.css';
 
 import { SocialIcons } from "../assests/Icons/socialIcons";
-import { SocialIconsHover } from "../assests/Icons/socialIcons";
+// import { SocialIconsHover } from "../assests/Icons/socialIcons";
 
 const sectionList = [
     {
@@ -68,11 +68,12 @@ const socialIconList = [
 const NavigationBar = ({className}) => {
     // Get current width from list items to make dynamic bobl
     const navItemRef = useRef(null);
-    const hoverIconRefList = socialIconList.map(() => React.createRef());
+    const navBarRef = useRef(null);
+    // const hoverIconRefList = socialIconList.map(() => React.createRef());
     const [currentWidth, getWith] = useState(0);
     const [elementWidth, getElementWidth] = useState(0);
     const [moveBobl, getMoveLocation] = useState(0);
-    const [ mouseHover, setMouseHover ] = useState(false);
+    // const [ mouseHover, setMouseHover ] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
@@ -88,33 +89,33 @@ const NavigationBar = ({className}) => {
     const handleMouseEnter = (event) => {
         const width = event.currentTarget.offsetWidth;
         const rect = event.currentTarget.getBoundingClientRect();
-        getMoveLocation(rect.left - 120);
+        const navbarOffSetLeft = navBarRef.current.getBoundingClientRect().left;
+        getMoveLocation(rect.x - navbarOffSetLeft);
         getElementWidth(width);
-        setMouseHover(true);
     }
 
-    const handleMouseLeave = () => {
-        setMouseHover(false);
-    }
+    // const handleMouseLeave = () => {
+    //     setMouseHover(false);
+    // }
 
     // Create bobl using current width
     const [bobl, makeBobl] = useState(null);
     useEffect(() => {
         makeBobl(<span 
-            className="bobl nav_animation absolute bg-[#4F4F4F]/60 h-[50px] ml-[6px] z-[-1] rounded-full" 
+            className="bobl nav_animation absolute bg-[#4F4F4F]/60 h-[40px] ml-[5px] z-[-1] left:[1000px] rounded-full" 
             style={{
-                width: (elementWidth !== 0 ? elementWidth - 12: currentWidth - 12) + 'px',
-                transform: 'translateX(' + moveBobl + 'px)'
+                width: (elementWidth !== 0 ? elementWidth - 10: currentWidth - 10) + 'px',
+                left: `${moveBobl}px`
             }}></span>);
     }, [elementWidth, moveBobl, currentWidth ]);
 
     return (
-        <nav data-testid=" navigationBar " className={` NavigationBar relative flex rounded-full items-center z-[3] bg-[#FFFFFF]/80 ${className} `} >
+        <nav data-testid=" navigationBar " ref={navBarRef} className={` NavigationBar relative max-w-[1180px] max-h-[50px] flex rounded-full items-center z-[3] bg-[#FFFFFF]/80 ${className} `} >
             <ul className=" Sections-Nav flex contents ">
                 {sectionList.map((section, index) => {
                     return (
-                        <li key={index} id={`navItem-${index}`} className=" flex-1 w-max h-[60px] inline-grid items-center text-black" ref={navItemRef} onMouseEnter={handleMouseEnter}>
-                                <a className="contents" href={section.url}>{section.name}</a>
+                        <li key={index} id={`navItem-${index}`} className=" flex-1 w-max h-[50px] inline-grid items-center text-black " ref={navItemRef} onMouseEnter={handleMouseEnter}>
+                                <a className=" text-[1rem] " href={section.url}>{section.name}</a>
                         </li>
                     );
                 })}
@@ -123,10 +124,11 @@ const NavigationBar = ({className}) => {
             <ul className=" Social-Icons flex contents ">
                 {socialIconList.map((icon, index) => {
                     return (
-                        <li key={index} id={`icon-${index}`} className=" inline-grid items-center h-[60px] " onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                        <li key={index} id={`icon-${index}`} className=" inline-grid items-center h-[50px] " onMouseEnter={handleMouseEnter}>
                             <a 
-                                className="contents"
+                                className=""
                                 href={icon.url}
+                                target="_blank"
                             >
                                 {icon.icon}
                             </a>

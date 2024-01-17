@@ -1,5 +1,5 @@
 //Big Project Section
-import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 
 import './styles/big_project_animation.css';
 
@@ -68,7 +68,6 @@ const projectList = [
 
 const BigProject = () => {
     const onLoadImageList = projectList.map(() => React.createRef());
-    const loadingAnimationImageHolderList = projectList.map(() => React.createRef());
     // Get project name legnth
     const projectNameRefList = projectList.map(() => React.createRef());
     const updateLineWidthRefList = projectList.map(() => React.createRef());
@@ -76,6 +75,7 @@ const BigProject = () => {
     useLayoutEffect(() => {
         projectNameRefList.map((projectNameRef, index) => {
             updateLineWidthRefList[index].current.style.width = `${projectNameRef.current.offsetWidth}px`;
+            return "";
         });
     },[projectNameRefList]);
 
@@ -162,7 +162,6 @@ const BigProject = () => {
                             <div 
                                 className=" projectImageHolder relative max-w-[530px] h-1/2 rounded-[30px] overflow-hidden bg-cover bg-top "
                                 style={{ backgroundImage: `url(${project.imageBlur})`}}
-                                ref={loadingAnimationImageHolderList[index]}
                             >
                                 <div className=" projectImageShining absolute flex gap-[8px] w-max h-[150%] z-[1]">
                                     <span className=" w-[26px] h-[100%] bg-white"></span>
@@ -170,6 +169,8 @@ const BigProject = () => {
                                 </div>
                                 <img
                                     className=" projectImage w-full h-full object-cover object-top opacity-[0] "
+                                    titile= "Project banner"
+                                    alt="Project banner"
                                     src={(project.image) === '' ? DefaultBanner : project.image}
                                     ref={onLoadImageList[index]}
                                     onLoad={() => onLoadHandle(index)}
